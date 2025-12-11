@@ -1,9 +1,9 @@
-{ config, lib, pkgs, ... }:
+{ self }: { config, lib, pkgs, ... }:
 with lib;
 
 let
-  swiftPack = ../swift/TerminalPack.swift;
-  swiftSync = ../swift/SyncPrefs.swift;
+  swiftPack = "${self}/swift/TerminalPack.swift";
+  swiftSync = "${self}/swift/SyncPrefs.swift";
   cfg = config.programs.terminal;
   frac = t: types.addCheck t (x: x >= 0.0 && x <= 1.0);
 in {

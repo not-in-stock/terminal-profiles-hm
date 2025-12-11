@@ -9,7 +9,7 @@
 
   outputs = { self, nixpkgs, home-manager, ... }:
   let
-    hmModule = import ./modules/terminal-profiles.nix;
+    hmModule = import ./modules/terminal-profiles.nix { inherit self; };
   in {
     homeManagerModules.terminal-profiles = hmModule;
   };
